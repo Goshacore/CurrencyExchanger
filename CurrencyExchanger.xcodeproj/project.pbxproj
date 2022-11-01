@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5751427F2911DE8B0007E5FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751427E2911DE8B0007E5FE /* Home.swift */; };
 		5778EC7029100B070003C663 /* CurrencyExchangerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778EC6F29100B070003C663 /* CurrencyExchangerApp.swift */; };
 		5778EC7229100B070003C663 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778EC7129100B070003C663 /* ContentView.swift */; };
 		5778EC7429100B080003C663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5778EC7329100B080003C663 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5751427E2911DE8B0007E5FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		5778EC6C29100B070003C663 /* CurrencyExchanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyExchanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5778EC6F29100B070003C663 /* CurrencyExchangerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyExchangerApp.swift; sourceTree = "<group>"; };
 		5778EC7129100B070003C663 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +34,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5751427B2911DE400007E5FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5751427C2911DE4E0007E5FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5751427D2911DE620007E5FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5751427E2911DE8B0007E5FE /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5778EC6329100B060003C663 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +75,9 @@
 		5778EC6E29100B070003C663 /* CurrencyExchanger */ = {
 			isa = PBXGroup;
 			children = (
+				5751427C2911DE4E0007E5FE /* Model */,
+				5751427B2911DE400007E5FE /* ViewModel */,
+				5751427D2911DE620007E5FE /* View */,
 				5778EC6F29100B070003C663 /* CurrencyExchangerApp.swift */,
 				5778EC7129100B070003C663 /* ContentView.swift */,
 				5778EC7329100B080003C663 /* Assets.xcassets */,
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5778EC7229100B070003C663 /* ContentView.swift in Sources */,
+				5751427F2911DE8B0007E5FE /* Home.swift in Sources */,
 				5778EC7029100B070003C663 /* CurrencyExchangerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
