@@ -12,18 +12,20 @@ enum  AllCurrencies : Int,  CaseIterable{
     case USD
     case EUR
     case GBP
-    case NNN
+    case AUD
+//  case BBB
   
-      // You can set the exchange currency for each base currency
+      //MARK: You can set the exchange currency for each base currency
      var receiveCurrency : [AllCurrencies] {
           
       switch self {
       default:
-          var a = AllCurrencies.allCases
-          a.remove(at: rawValue)
-          print("QQQQQQQQQ\(rawValue)")
-          return  AllCurrencies.allCases
-          }
+          // By default returns all available currencies
+          var allCurrenciesWithoutCurrent = AllCurrencies.allCases
+          allCurrenciesWithoutCurrent.remove(at: rawValue)
+          return   allCurrenciesWithoutCurrent
+          
+      }
       }
       
 }

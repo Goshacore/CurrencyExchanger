@@ -9,7 +9,12 @@ import Foundation
 
 
 
+import Foundation
+
+
+
 enum ApiType {
+   
     
     case getLatest(value: AllCurrencies.AllCases)
     
@@ -36,9 +41,11 @@ enum ApiType {
     
     var requestesArray : [URLRequest] {
         
+        // MARK: Create URL from URL elements
         let urlString = baseURL + path
 
-        var arrayURLRequesr: [URLRequest] = []
+        // MARK: Create empty URLRequestes array
+        var arrayURLRequestes: [URLRequest] = []
 
         switch self {
         case .getLatest(let Currency):
@@ -46,6 +53,7 @@ enum ApiType {
            
             for sellCurrency in Currency {
                 
+                // MARK: Create a query components and add it in urlComponents
                 let sellCurrencyString: String = "\(sellCurrency)"
                 let receiveCurrencyStringArray = sellCurrency.receiveCurrency.map{"\($0)"}
                 let receiveCurrencyString = receiveCurrencyStringArray.joined(separator: ",")
@@ -55,15 +63,16 @@ enum ApiType {
                 URLQueryItem(name: "symbols", value: receiveCurrencyString),
                 URLQueryItem(name: "base", value: sellCurrencyString)
              ]
-                
+                    // MARK: Create URLReqyest based on the urlComponents
                 var request = URLRequest(url: (urlComponents.url)!)
                 request.allHTTPHeaderFields = headers
                 request.httpMethod = "GET"
                     
-                arrayURLRequesr.append(request)
-                } else {print("ERROR")}
+                    // MARK: Add URLReqyest in Array
+                    arrayURLRequestes.append(request)
+                } else { print("ERROR")}
             }
-            return arrayURLRequesr
+            return arrayURLRequestes
   
             
         }

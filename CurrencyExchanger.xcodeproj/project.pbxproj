@@ -15,6 +15,7 @@
 		5778EC7229100B070003C663 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5778EC7129100B070003C663 /* ContentView.swift */; };
 		5778EC7429100B080003C663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5778EC7329100B080003C663 /* Assets.xcassets */; };
 		5778EC7729100B080003C663 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5778EC7629100B080003C663 /* Preview Assets.xcassets */; };
+		57CF359829165A500016F6EE /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CF359729165A500016F6EE /* ApiServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		5778EC7129100B070003C663 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5778EC7329100B080003C663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5778EC7629100B080003C663 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57CF359729165A500016F6EE /* ApiServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				5751431D291562B10007E5FE /* ApiType.swift */,
+				57CF359729165A500016F6EE /* ApiServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5751431E291562B10007E5FE /* ApiType.swift in Sources */,
+				57CF359829165A500016F6EE /* ApiServices.swift in Sources */,
 				5778EC7229100B070003C663 /* ContentView.swift in Sources */,
 				5751427F2911DE8B0007E5FE /* Home.swift in Sources */,
 				57514319291561160007E5FE /* CurrencyDataModel.swift in Sources */,
