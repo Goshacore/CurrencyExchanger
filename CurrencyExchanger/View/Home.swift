@@ -9,11 +9,18 @@ import SwiftUI
 
 struct Home: View {
     
+   @StateObject var viewModelCurrency = ViewModelCurrency(apiService: ApiServices())
+  //  @EnvironmentObject var viewModelCurrency = ViewModelCurrency(apiService: ApiServices())
+    
+   
+    
+    
     @FocusState private var keyboardFocused: Bool
-    @State var itemName = ""
+ //   @State var itemName = ""
     @State var scale = 1.0
     var body: some View {
         GeometryReader { proxy in
+       
             VStack{
                 HStack{
                     Text("Currency converter")
@@ -34,14 +41,18 @@ struct Home: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack{
                             Group{
-                                Text("1000.00 EUR")
-                                    .padding(.leading, 15)                   .padding(.trailing, 50)
-                                Text("0.00 USD")
-                                    .padding(.leading, 15)                       .padding(.trailing, 50)
-                                Text("0.00 BGN")
-                                    .padding(.leading, 15)                       .padding(.trailing, 50)
-                                Text("0.00 NNN")
-                                    .padding(.leading, 15)                       .padding(.trailing, 50)
+                                
+                                ForEach(viewModelCurrency.allCurrencies, id: \.self) {currency in
+                                    
+                                    HStack{
+                                    Text("1000.00")
+                                        Text("\(currency.rawValue)")
+                                    }
+                                        .padding(.leading, 15)
+                                        .padding(.trailing, 50)
+                                    
+                                }
+                      .padding(.trailing, 50)
                             }
                             .lineLimit(1)
                             .font(.headline)
@@ -57,12 +68,29 @@ struct Home: View {
                 
                 VStack(alignment: .leading, spacing: 20) {
                     //      VStack(alignment: .center, spacing: 20) {
-                    //    HStack{
+                        HStack{
                     Text("CURRENCY EXCHANGE")
                         .foregroundColor(.secondary)
                         .font(.headline)
                         .padding(.leading, 5)
-                    //     }
+                            
+                            Spacer()
+                            
+                            Text("\(viewModelCurrency.currentPrice, specifier: "%.5f")")
+                            
+                            Spacer()
+                            
+                            Text("\(viewModelCurrency.synchronizationTime)")
+                                .foregroundColor(.black)
+                                .font(.headline)
+                                .padding(.trailing, 15)
+                                .onTapGesture{
+                                    
+                                    viewModelCurrency.timer.invalidate()
+                                    
+                                }
+                            
+                                                   }
                     Group{
                         VStack(alignment: .trailing,  spacing: 5 * scale) {
                             HStack {
@@ -76,8 +104,10 @@ struct Home: View {
                                 //             Text("100.00")
                                 //                .padding(.trailing, 10)
                                 
-                                TextField("100", text: $itemName)
-                                    .frame(width: 70)
+                                TextField("Sum" ,text: $viewModelCurrency.sum)
+                                   .padding(.leading, 15)
+                                .frame(width: 70)
+                                 
                                     .keyboardType(.decimalPad )
                                     .focused($keyboardFocused)
                                     .onAppear {
@@ -85,28 +115,45 @@ struct Home: View {
                                             keyboardFocused = true
                                         }
                                     }
+                                    .onTapGesture{
+                                        keyboardFocused = true
+                                    }
+                                    .onChange(of: viewModelCurrency.sum){ value in
+                                        
+                                        viewModelCurrency.сurrencyСonverter()
+                                        
+                                    }
                                 
-                              
+                                
                                 Menu {
-                                               Button(action: {
-                                                  
-                                               }) {
-                                                   Text("USD")
-                                               }
-                                    Button(action: {
-                                       
-                                    }) {
-                                        Text("BGN")
+                                    
+                                    ForEach(viewModelCurrency.baseСurrenciesArray, id: \.self) { currency in
+                                        
+                                        Button(action: {
+                                            self.viewModelCurrency.baseLabel = currency
+                                            self.viewModelCurrency.updatebuyCurrencyArray()
+                                            
+                                 
+                                            
+                                            
+                                        }) {
+                                            Text(currency)
+                                        }
+                                        
                                     }
                                            } label: {
                                                HStack(spacing: 3){
-                                                   Text("EUR")
+                                                   Text("\(viewModelCurrency.baseLabel)")
                                                    Image(systemName: "control")
                                                        .rotationEffect(.radians(.pi))
                                                }
+                                               .frame(width: 60)
                                            }
                                            .menuStyle(BorderlessButtonMenuStyle())
-                             
+                                
+             
+                                
+                                
                                 .padding(.trailing, 15)
                     
                                 
@@ -125,15 +172,41 @@ struct Home: View {
                                     .padding(.leading, 5)
                                 //  .font(.subheadline)
                                 Spacer()
-                                Text("+ 110.30")
+                              
+                                    
+                                    Text("+ \(viewModelCurrency.result, specifier: "%.5f")")
+                              
                                     .foregroundColor(.green)
-                                    .padding(.trailing, 10)
+                                  //  .frame(width: 70)
+                                  .padding(.trailing, 15)
                                 
-                                HStack(spacing: 3){
-                                    Text("USD")
-                                    Image(systemName: "control")
-                                        .rotationEffect(.radians(.pi))
-                                }
+                                Menu {
+                                    
+                                    ForEach(viewModelCurrency.buyCurrencyArray, id: \.self) { currency in
+                                        
+                                        Button(action: {
+                                           
+                                            viewModelCurrency.buyLabel = currency
+                                            viewModelCurrency.updatebaseCurrenciesArray()
+                                            
+                                            
+                                            
+                                        }) {
+                                            Text(currency)
+                                        }
+                                        
+                                    }
+                                           } label: {
+                                               HStack(spacing: 3){
+                                                   Text("\(viewModelCurrency.buyLabel)")
+                                                   Image(systemName: "control")
+                                                       .rotationEffect(.radians(.pi))
+                                               }
+                                               .frame(width: 60)
+                                           }
+                                           .menuStyle(BorderlessButtonMenuStyle())
+                                
+                                
                                 .padding(.trailing, 15)
                             }
                             
@@ -156,7 +229,18 @@ struct Home: View {
                 
                Spacer()
                 
-                Button(action: {}){
+               
+                
+                Button(action: {
+                    /*
+                    Task {
+                     try   await   currencyViewModel.apiService.getPosts()
+                    }
+                    */
+                    viewModelCurrency.currencySynchronization()
+                    
+                    
+                }){
                     
                     Text("SUBMIT")
                         .font(.body)
@@ -168,6 +252,10 @@ struct Home: View {
                         .clipShape(Capsule())
                         .padding(.bottom, 15 * scale)
                     
+                }
+                .task{
+                    
+               await    viewModelCurrency.getPosts()
                 }
                 
                 
@@ -181,6 +269,8 @@ struct Home: View {
                 
                 
             }
+            .environmentObject(viewModelCurrency)
+    
             
         }
         

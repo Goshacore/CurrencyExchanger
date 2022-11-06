@@ -20,7 +20,7 @@ enum ApiType {
     var headers: [String : String] {
         switch self {
         case .getLatest:
-            return ["apikey" : "03RfBCqRrZqjqlxTnbUaEqMeklyMeH7a"]
+            return ["apikey" : "efSvZb3QsmUAi2Tz5k0282LsncfMTYvs"]
        
         }
     }
