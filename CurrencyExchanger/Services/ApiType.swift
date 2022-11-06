@@ -8,11 +8,6 @@
 import Foundation
 
 
-
-import Foundation
-
-
-
 enum ApiType {
    
     
@@ -25,7 +20,7 @@ enum ApiType {
     var headers: [String : String] {
         switch self {
         case .getLatest:
-            return ["apikey" : "YtMdYZvLJZMJFD61zP8GaULmufcRAr30"]
+            return ["apikey" : "03RfBCqRrZqjqlxTnbUaEqMeklyMeH7a"]
        
         }
     }
@@ -55,7 +50,7 @@ enum ApiType {
                 
                 // MARK: Create a query components and add it in urlComponents
                 let sellCurrencyString: String = "\(sellCurrency)"
-                let receiveCurrencyStringArray = sellCurrency.receiveCurrency.map{"\($0)"}
+                let receiveCurrencyStringArray = sellCurrency.receiveCurrency
                 let receiveCurrencyString = receiveCurrencyStringArray.joined(separator: ",")
               
                 if   var urlComponents = URLComponents(string: urlString) {
