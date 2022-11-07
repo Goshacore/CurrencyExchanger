@@ -8,6 +8,7 @@
 import Foundation
 
 
+
 enum ApiType {
    
     
@@ -20,9 +21,13 @@ enum ApiType {
     var headers: [String : String] {
         switch self {
         case .getLatest:
-            return ["apikey" : "efSvZb3QsmUAi2Tz5k0282LsncfMTYvs"]
+            return ["apikey" : "OwEUzSi2MpZvunZMtz7BD0XvdFg5vz1D"]
        
+            
+         //   33BGWnP0E31rTxxyCv9jTz2RpEruheKJ
         }
+        
+        
     }
     
     var path: String {
@@ -65,7 +70,7 @@ enum ApiType {
                     
                     // MARK: Add URLReqyest in Array
                     arrayURLRequestes.append(request)
-                } else { print("ERROR")}
+                } else {     DownloadError.invalidURL}
             }
             return arrayURLRequestes
   

@@ -9,17 +9,7 @@ import Foundation
 
 struct ApiServices {
     
- //   @Binding var aa: String
-    
-    enum CharacterServiceError: Error {
-        case failed
-        case failedToDecode
-        case invalidStatusCode
-        
-    }
-    
-
-
+ 
     
     let apiType = ApiType.getLatest(value: AllCurrencies.allCases)
     
@@ -85,7 +75,7 @@ struct ApiServices {
     func getPosts() async throws-> [Codable] {
         do {
     let groupPosts  =   try await  getPostsFromGroup(URLRequestArray: apiType.requestesArray, modelType: CurrencyDataModel.self)
-        //    print(groupPosts)
+            print(groupPosts)
             return groupPosts
     
         } catch {
@@ -94,46 +84,10 @@ struct ApiServices {
            
             
         }
-    }
-    
-    
-    
-    func aaaa() {
-        
-     let a = apiType.requestesArray
-        
-        for i in a {
-            
-            print(i.url)
-            
-        }
-                
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    /*
-    func fetchCharacters() async throws -> [Character]{
-        
-        let url = URL(string:"https://rickandmortyapi.com/api/character")!
-        let (data, response) = try await URLSession.shared.data(from: url)
-        
-        guard let response = response as? HTTPURLResponse,
-              response.statusCode == 200 else {
-                  throw CharacterServiceError.invalidStatusCode
-              }
-        
-        
-        let decodedData = try JSONDecoder().decode(CharacterServiceResult.self, from: data)
-        return decodedData.results
-    }
-    */
+    }    
+
 }
+
 
 
 enum DownloadError: Error {

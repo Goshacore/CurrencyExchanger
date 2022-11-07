@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570E7F02291948F4009F418C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 570E7F01291948F4009F418C /* Realm */; };
+		570E7F04291948F4009F418C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 570E7F03291948F4009F418C /* RealmSwift */; };
+		570E7F0829195124009F418C /* myBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F0729195124009F418C /* myBalance.swift */; };
+		570E7F0A2919512E009F418C /* CurrencyExchang.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F092919512E009F418C /* CurrencyExchang.swift */; };
+		570E7F0C29195133009F418C /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F0B29195133009F418C /* ButtonView.swift */; };
+		570E7F0E29195139009F418C /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F0D29195139009F418C /* Header.swift */; };
+		570E7F102919513D009F418C /* Transactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F0F2919513D009F418C /* Transactions.swift */; };
+		570E7F1229195192009F418C /* ExtansionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F1129195192009F418C /* ExtansionViewModel.swift */; };
+		570E7F142919519C009F418C /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F132919519C009F418C /* RealmModels.swift */; };
+		570E7F16291951CC009F418C /* ErrorEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F15291951CC009F418C /* ErrorEnum.swift */; };
+		570E7F19291951D6009F418C /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570E7F18291951D6009F418C /* Extension.swift */; };
 		5751427F2911DE8B0007E5FE /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751427E2911DE8B0007E5FE /* Home.swift */; };
 		57514319291561160007E5FE /* CurrencyDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57514318291561160007E5FE /* CurrencyDataModel.swift */; };
 		5751431B291561A30007E5FE /* AllCurrencies .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5751431A291561A30007E5FE /* AllCurrencies .swift */; };
@@ -20,6 +31,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570E7F0729195124009F418C /* myBalance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myBalance.swift; sourceTree = "<group>"; };
+		570E7F092919512E009F418C /* CurrencyExchang.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyExchang.swift; sourceTree = "<group>"; };
+		570E7F0B29195133009F418C /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		570E7F0D29195139009F418C /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		570E7F0F2919513D009F418C /* Transactions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transactions.swift; sourceTree = "<group>"; };
+		570E7F1129195192009F418C /* ExtansionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtansionViewModel.swift; sourceTree = "<group>"; };
+		570E7F132919519C009F418C /* RealmModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmModels.swift; sourceTree = "<group>"; };
+		570E7F15291951CC009F418C /* ErrorEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEnum.swift; sourceTree = "<group>"; };
+		570E7F18291951D6009F418C /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		5751427E2911DE8B0007E5FE /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		57514318291561160007E5FE /* CurrencyDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyDataModel.swift; sourceTree = "<group>"; };
 		5751431A291561A30007E5FE /* AllCurrencies .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AllCurrencies .swift"; sourceTree = "<group>"; };
@@ -38,16 +58,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570E7F04291948F4009F418C /* RealmSwift in Frameworks */,
+				570E7F02291948F4009F418C /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570E7F17291951D6009F418C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				570E7F18291951D6009F418C /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		5751427B2911DE400007E5FE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				57CF359F2917C83B0016F6EE /* ViewModelCurrency.swift */,
+				570E7F1129195192009F418C /* ExtansionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -57,6 +88,7 @@
 			children = (
 				57514318291561160007E5FE /* CurrencyDataModel.swift */,
 				5751431A291561A30007E5FE /* AllCurrencies .swift */,
+				570E7F132919519C009F418C /* RealmModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -65,6 +97,11 @@
 			isa = PBXGroup;
 			children = (
 				5751427E2911DE8B0007E5FE /* Home.swift */,
+				570E7F0D29195139009F418C /* Header.swift */,
+				570E7F0729195124009F418C /* myBalance.swift */,
+				570E7F092919512E009F418C /* CurrencyExchang.swift */,
+				570E7F0B29195133009F418C /* ButtonView.swift */,
+				570E7F0F2919513D009F418C /* Transactions.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -74,6 +111,7 @@
 			children = (
 				5751431D291562B10007E5FE /* ApiType.swift */,
 				57CF359729165A500016F6EE /* ApiServices.swift */,
+				570E7F15291951CC009F418C /* ErrorEnum.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -97,6 +135,7 @@
 		5778EC6E29100B070003C663 /* CurrencyExchanger */ = {
 			isa = PBXGroup;
 			children = (
+				570E7F17291951D6009F418C /* Extension */,
 				5751431C291562460007E5FE /* Services */,
 				5751427C2911DE4E0007E5FE /* Model */,
 				5751427B2911DE400007E5FE /* ViewModel */,
@@ -133,6 +172,10 @@
 			dependencies = (
 			);
 			name = CurrencyExchanger;
+			packageProductDependencies = (
+				570E7F01291948F4009F418C /* Realm */,
+				570E7F03291948F4009F418C /* RealmSwift */,
+			);
 			productName = CurrencyExchanger;
 			productReference = 5778EC6C29100B070003C663 /* CurrencyExchanger.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 5778EC6329100B060003C663;
+			packageReferences = (
+				570E7F00291948F3009F418C /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 5778EC6D29100B070003C663 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,13 +233,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570E7F0829195124009F418C /* myBalance.swift in Sources */,
+				570E7F102919513D009F418C /* Transactions.swift in Sources */,
+				570E7F0A2919512E009F418C /* CurrencyExchang.swift in Sources */,
 				5751431E291562B10007E5FE /* ApiType.swift in Sources */,
 				57CF35A02917C83B0016F6EE /* ViewModelCurrency.swift in Sources */,
+				570E7F0E29195139009F418C /* Header.swift in Sources */,
 				57CF359829165A500016F6EE /* ApiServices.swift in Sources */,
 				5778EC7229100B070003C663 /* ContentView.swift in Sources */,
+				570E7F0C29195133009F418C /* ButtonView.swift in Sources */,
+				570E7F16291951CC009F418C /* ErrorEnum.swift in Sources */,
+				570E7F19291951D6009F418C /* Extension.swift in Sources */,
+				570E7F142919519C009F418C /* RealmModels.swift in Sources */,
 				5751427F2911DE8B0007E5FE /* Home.swift in Sources */,
 				57514319291561160007E5FE /* CurrencyDataModel.swift in Sources */,
 				5778EC7029100B070003C663 /* CurrencyExchangerApp.swift in Sources */,
+				570E7F1229195192009F418C /* ExtansionViewModel.swift in Sources */,
 				5751431B291561A30007E5FE /* AllCurrencies .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -397,6 +452,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		570E7F00291948F3009F418C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		570E7F01291948F4009F418C /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570E7F00291948F3009F418C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		570E7F03291948F4009F418C /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570E7F00291948F3009F418C /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5778EC6429100B060003C663 /* Project object */;
 }

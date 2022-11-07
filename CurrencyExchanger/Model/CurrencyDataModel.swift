@@ -12,3 +12,4 @@ struct CurrencyDataModel: Codable {
     let rates: [String: Double]?
     let base, date: String?
 }
+
